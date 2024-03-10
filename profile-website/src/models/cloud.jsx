@@ -6,36 +6,122 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { a } from '@react-spring/three';
 import {useNavigate} from 'react-router-dom'
 
-import cloudScene from '../assets/cloud.glb';
+import pochitaScene from '../assets/models/pochita-cloud-colour.glb';
 
 
-const Cloud = ({isHover, setHover, ...props}) => {
+const Cloud = ({onDog, setOnDog, setHovered, hoverAnything, setHoverAnything, ...props}) => {
   const { gl } = useThree();
-  const cloudRef = useRef();
-  const { nodes, materials } = useGLTF(cloudScene);
+  const dogRef = useRef();
+  const { nodes, materials } = useGLTF(pochitaScene);
 
 
   const handleClick = (e) => {
     e.stopPropagation();
     
-    window.location.replace("/about");
+    window.location.replace("/projects");
   }
 
   useEffect(() => {
-    document.body.style.cursor = isHover ? 'pointer' : 'auto';
-  }, [isHover])
+    if (onDog) {
+      document.body.style.cursor = 'pointer';
+      setHovered(4);
+      setHoverAnything(true);
+    } else {
+      document.body.style.cursor = 'auto';
+    }
+  })
 
 
   return (
-    <a.group ref={cloudRef} {...props}>
-      <mesh
-        geometry={nodes.Object_2.geometry}
-        material={materials.material_0}
-        rotation={[-Math.PI / 2, 0, 0]}
-        onPointerOver={() => setHover(true)}
-        onPointerOut={() => setHover(false)}
+    <a.group ref={dogRef} {...props}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
+        <group 
+        position={[-228.141, -280.375, -22.734]}
+        onPointerOver={() => setOnDog(true)}
+        onPointerOut={() => setOnDog(false)}
         onClick={ handleClick }
-      />
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_3.geometry}
+            material={materials.DEFAULT}
+            position={[231.164, 276.764, 24.181]}
+            rotation={[-Math.PI, 0.007, -Math.PI]}
+            scale={0.012}
+          />
+        </group>
+      </group>
+      <group
+        position={[-0.036, 0.638, -1.334]}
+        rotation={[-1.467, 0.162, 0.904]}
+        onPointerOver={() => setOnDog(true)}
+        onPointerOut={() => setOnDog(false)}
+        onClick={ handleClick }
+      >
+        <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+          <group
+            position={[31.884, 141.923, 2.315]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={3.326}
+          >
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Pochita_Remesh001_Material001_0.geometry}
+              material={materials["Material.002"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Pochita_Remesh001_Material003_0.geometry}
+              material={materials["Material.003"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Pochita_Remesh001_Material_0.geometry}
+              material={materials["Material.001"]}
+            />
+          </group>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube016_Material001_0.geometry}
+            material={materials["Material.002"]}
+            position={[32.891, 262.855, -23.26]}
+            rotation={[-2.094, 0, 0]}
+            scale={71.985}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube017_Material001_0.geometry}
+            material={materials["Material.002"]}
+            position={[31.884, 100.141, -118.636]}
+            rotation={[-Math.PI / 4, 0, 0]}
+            scale={7.774}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube018_Material002_0.geometry}
+            material={materials["Material.004"]}
+            position={[31.884, 207.194, 55.27]}
+            rotation={[-2.094, 0, 0]}
+            scale={[42.09, 100, 100]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.NurbsPath004_Material001_0.geometry}
+            material={materials["Material.002"]}
+            position={[31.884, 77.157, -127.576]}
+            rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+            scale={[23.64, 100, 100]}
+          />
+        </group>
+      </group>
     </a.group>
   );
 }

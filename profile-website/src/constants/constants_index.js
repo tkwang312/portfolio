@@ -15,6 +15,15 @@ import react from "../assets/icons/react.svg"
 import tailwindcss from "../assets/icons/tailwindcss.svg"
 import tensorflow from "../assets/icons/tensorflow.svg"
 import threejs from "../assets/icons/threejs.svg"
+import backpack_buddies from "../assets/icons/backpack_buddies.svg"
+import cstutor from "../assets/icons/cstutor.svg"
+import deli from "../assets/icons/deli.svg"
+import math from "../assets/icons/math.svg"
+import merci from "../assets/icons/merci.svg"
+import robotics from "../assets/icons/robotics.svg"
+import ski from "../assets/icons/ski.svg"
+import freegeek from "../assets/icons/freegeek.svg"
+
 
 export const languages = [
     {
@@ -104,103 +113,91 @@ export const skills = [
 ];
 
 export const volunteering = [
-    {
-        title: "React.js Developer",
-        company_name: "Backpack Buddies",
-        iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "React Native Developer",
+    {   
+        icon: merci,
         company_name: "Merci Charity",
-        iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
+        iconBg: "#ffffff",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Lead and organized multiple fundraising events such as paid-entry esports tournaments and food stands",
+            "Participated in monthly food delivery trips to support hospital workers",
+            "Collected a selected of notes and gifts for healthcare workers during the height of the COVID-19 pandemic",
         ],
     },
-    {
-        title: "Web Developer",
-        company_name: "Shopify",
+    {   
+        icon: backpack_buddies,
+        company_name: "Backpack Buddies",
+        iconBg: "#C9ECFC",
+        points: [
+            "Pack bags of food from donars every week to prepare for delivery to schools with food-insecure children",
+            "Participate in fundraisers and donation events",
+            "Make sandwhiches and put together food bags to hand out in the downtown east side of Vancouver",
+        ],
+    },
+    {   
+        icon:freegeek,
+        company_name: "FreeGeek",
         iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Disassemble computer, keyboard, and mouses to recycle parts",
+            "Test the functionality of different computer parts to determine which parts to recylce and which parts to throw away",
+            "Build computers with the parts that are determined still functional to sell for a low price to those who can't afford regular technology",
         ],
-    },
-    {
-        title: "Full stack Developer",
-        company_name: "Meta",
-        iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
+    }
 ];
 
 export const experiences = [
-    {
+    {   
+        icon: cstutor,
         title: "Computer Science Tutor",
-        company_name: "Starbucks",
+        company_name: "Freelance",
         iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Tutoring students taking first year university computer science classes.",
+            "Currently tutoring three students have tutored 5 in total.",
+            "Classes include: CSC108 and STA130 (University of Toronto), COMPSCI101 (Duke University), and CISC121 (Queens University)",
         ],
     },
-    {
+    {   
+        icon: deli,
         title: "Deli Clerk",
-        company_name: "Tesla",
+        company_name: "Loblaws",
         iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Worked 24-28 hour work weeks part-time.",
+            "In charge of serving customers, stocking shelves, cleaning slicers and counters, and making charcuterie boards.",
         ],
     },
-    {
+    {   
+        icon: math,
         title: "Math Tutor",
-        company_name: "Shopify",
-        iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
+        company_name: "Freelance",
+        iconBg: "#D3D3D3",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Tutored pre-calculus to highschool kids",
+            "Tutored two students on Zoom from China",
+            "Used half of the earnings as donations to Merci Charity",
         ],
     },
-    {
-        title: "Sager Teacher",
-        company_name: "Sager Teacher",
-        iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
+    {   
+        icon: ski,
+        title: "Ski Instructor",
+        company_name: "Cypress Mountain",
+        iconBg: "#C9ECFC",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Conducted individual ski lessons to beginners.",
+            "Teach proper skiing techniques, including stance, balance, turning, stopping, and speed control.",
+        ],
+    },
+    {   
+        icon: robotics,
+        title: "Circuits and Robotics Class Teacher",
+        company_name: "Sager Education",
+        iconBg: "#D3D3D3",
+        points: [
+            "Lead a circuits and robotics class for elementary school students.",
+            "Facilitate hands-on learning experiences using robotics kits, software, and tools, ensuring all participants have the opportunity to build, program, and test robots.",
+            "Taught lessons about circuit components and circuit systems.",
+            "Assisted in circuit kit construction to help them build complete circuit projects such as a mini-radio.",
         ],
     },
 ];

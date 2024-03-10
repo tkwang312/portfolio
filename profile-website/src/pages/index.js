@@ -3,6 +3,6 @@ import About from './About'
 import Contact from './Contact'
 import Projects from './Projects'
 import Experience from './Experience'
-import Education from './Education'
+import Skills from './Skills'
 
-export { Home, About, Contact, Projects, Education, Experience };
+export { Home, About, Contact, Projects, Skills, Experience };
