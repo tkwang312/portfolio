@@ -13,12 +13,12 @@ const Dog = ({isHover, setHover, ...props}) => {
   const { gl } = useThree();
   const dogRef = useRef();
   const { nodes, materials } = useGLTF(dogScene);
-
+  const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.stopPropagation();
-    
-    window.location.replace("/projects");
+    navigate('/projects')
+    // window.location.replace("/projects");
   }
 
   useEffect(() => {

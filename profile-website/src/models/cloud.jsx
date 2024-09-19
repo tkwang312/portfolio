@@ -18,6 +18,7 @@ const Cloud = ({onDog, setOnDog, setHovered, hoverAnything, setHoverAnything, ..
   const handleClick = (e) => {
     e.stopPropagation();
     navigate('/projects')
+    // window.location.replace("/projects");
   }
 
   useEffect(() => {

@@ -13,12 +13,12 @@ const Computer = ({onComputer, setOnComputer, setHovered, hoverAnything, setHove
   const { gl } = useThree();
   const computerRef = useRef();
   const { nodes, materials } = useGLTF(computerScene);
-
+ const navigate = useNavigate()
 
   const handleClick = (e) => {
     e.stopPropagation();
-    
-    window.location.replace("/skills");
+    navigate('/skills')
+    // window.location.replace("/skills");
   }
 
   useEffect(() => {

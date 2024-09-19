@@ -15,7 +15,7 @@ const Basketball = ({onBall, setOnBall, setHovered, hoverAnything, setHoverAnyth
     const { gl } = useThree();
     const basketballRef = useRef();
     const { nodes, materials } = useGLTF(basketballScene);
-  
+    const navigate = useNavigate();
     
     const handleHover = () => {
       setOnBall(true)
@@ -24,8 +24,8 @@ const Basketball = ({onBall, setOnBall, setHovered, hoverAnything, setHoverAnyth
 
     const handleClick = (e) => {
       e.stopPropagation();
-      
-      window.location.replace("/about");
+      navigate('/about');
+      // window.location.replace("/about");
     }
   
     useEffect(() => {

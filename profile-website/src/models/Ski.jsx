@@ -13,12 +13,12 @@ const Ski = ({onSkis, setOnSkis, setHovered, hoverAnything, setHoverAnything, ..
   const { gl } = useThree();
   const skiRef = useRef();
   const { nodes, materials } = useGLTF(skiScene);
-
+  const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.stopPropagation();
-    
-    window.location.replace("/experience");
+    navigate('/experience')
+    // window.location.replace("/experience");
   }
 
   useEffect(() => {
