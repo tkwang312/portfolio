@@ -12,13 +12,12 @@ import pochitaScene from '../assets/models/pochita-cloud-colour.glb';
 const Cloud = ({onDog, setOnDog, setHovered, hoverAnything, setHoverAnything, ...props}) => {
   const { gl } = useThree();
   const dogRef = useRef();
+  const navigate = useNavigate()
   const { nodes, materials } = useGLTF(pochitaScene);
-
 
   const handleClick = (e) => {
     e.stopPropagation();
-    
-    window.location.replace("/projects");
+    navigate('/projects')
   }
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const Cloud = ({onDog, setOnDog, setHovered, hoverAnything, setHoverAnything, ..
     } else {
       document.body.style.cursor = 'auto';
     }
-  })
+  }, [onDog, setHovered, setHoverAnything])
 
 
   return (
