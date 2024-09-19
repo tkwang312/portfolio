@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unknown-property */
 import { Suspense, useState } from 'react'
-import { Canvas, useThree } from '@react-three/fiber'
-import * as THREE from 'three';
+import { Canvas } from '@react-three/fiber'
+// import * as THREE from 'three';
 import Loader from '../components/Loader'
 import Dog from '../models/Dog'
-import Cloud from '../models/Cloud'
 import Computer from '../models/Computer'
 import Ski from '../models/Ski'
 import Basketball from '../models/Basketball'
@@ -20,18 +19,7 @@ const Home = () => {
   const [hoverAnything, setHoverAnything] = useState(false)
   const [hoveredCloud, setHovered] = useState(5);
 
-  const adjustDogForScreenSize = () => {
-    let screenScale = null 
-    let screenPosition = [-4, 8 , -13];
-    let rotation = [0, -1.2, 0];
-
-    if ( window.innerWidth < 768 ) {
-      screenScale = [1, 1, 1]
-    } else {
-      screenScale = [1, 1, 1]   
-    }
-    return [screenScale, screenPosition, rotation];
-  }
+  console.log(hoveredCloud)
 
   const adjustPochitaForScreenSize = () => {
     let screenScale = null 
@@ -95,7 +83,10 @@ const Home = () => {
     <section className="w-full h-screen relative bg-blue-200">
       
       <div className="absolute top-28 left-0 right-0 z-10 flex item-center justify-center">
-        {hoveredCloud && <HomeInfo hoveredCloud={hoveredCloud} />}
+        {hoveredCloud === 5 ? null :     
+        <div className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow-lg text-center">
+          <HomeInfo hoveredCloud={hoveredCloud} />
+        </div>}
       </div>
 
 
@@ -114,14 +105,7 @@ const Home = () => {
             setOnSky = { setOnSky }
             setHovered = {setHovered}
           />
-          {/* <Dog 
-            scale = { dogScale }
-            position = { dogPosition }
-            rotation = { dogRotation }
-            isHover = { isHover }
-            setHover = { setHover }
-          /> */}
-          <Cloud 
+          <Dog 
             scale = { pochitaScene }
             position = { pochitaPosition }
             rotation = { pochitaRotation }
