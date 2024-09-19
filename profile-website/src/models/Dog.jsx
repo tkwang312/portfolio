@@ -6,14 +6,14 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { a } from '@react-spring/three';
 import {useNavigate} from 'react-router-dom'
 
-import dogScene from '../assets/models/bond-forger-flipped.glb';
+import pochitaScene from '../assets/models/pochita-cloud-colour.glb';
 
 
-const Dog = ({isHover, setHover, ...props}) => {
+const Dog = ({onDog, setOnDog, setHovered, hoverAnything, setHoverAnything, ...props}) => {
   const { gl } = useThree();
   const dogRef = useRef();
-  const { nodes, materials } = useGLTF(dogScene);
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { nodes, materials } = useGLTF(pochitaScene);
 
   const handleClick = (e) => {
     e.stopPropagation();
@@ -22,14 +22,25 @@ const Dog = ({isHover, setHover, ...props}) => {
   }
 
   useEffect(() => {
-    document.body.style.cursor = isHover ? 'pointer' : 'auto';
-  }, [isHover])
+    if (onDog) {
+      document.body.style.cursor = 'pointer';
+      setHovered(4);
+      setHoverAnything(true);
+    } else {
+      document.body.style.cursor = 'auto';
+    }
+  })
 
 
   return (
     <a.group ref={dogRef} {...props}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group position={[-228.141, -280.375, -22.734]}>
+        <group 
+        position={[-228.141, -280.375, -22.734]}
+        onPointerOver={() => setOnDog(true)}
+        onPointerOut={() => setOnDog(false)}
+        onClick={ handleClick }
+        >
           <mesh
             castShadow
             receiveShadow
@@ -42,321 +53,74 @@ const Dog = ({isHover, setHover, ...props}) => {
         </group>
       </group>
       <group
-        position={[1.298, 1.243, 1.665]}
-        rotation={[Math.PI / 2, -0.069, 1.124]}
+        position={[-0.036, 0.638, -1.334]}
+        rotation={[-1.467, 0.162, 0.904]}
+        onPointerOver={() => setOnDog(true)}
+        onPointerOut={() => setOnDog(false)}
+        onClick={ handleClick }
       >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_10.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_11.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_12.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_13.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_14.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_15.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_16.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_17.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_18.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_19.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_20.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_21.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_22.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_23.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_24.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_25.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_26.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_27.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_28.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_29.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_30.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_31.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_32.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_33.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_34.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_35.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_36.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_37.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_38.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_39.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_4.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_40.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_41.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_42.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_43.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_44.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_45.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_46.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_47.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_48.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_49.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_5.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_50.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_51.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_52.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_53.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_54.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_55.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_6.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_7.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_8.geometry}
-          material={materials.FeatherMaterial}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_9.geometry}
-          material={materials.FeatherMaterial}
-        />
+        <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+          <group
+            position={[31.884, 141.923, 2.315]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            scale={3.326}
+          >
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Pochita_Remesh001_Material001_0.geometry}
+              material={materials["Material.002"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Pochita_Remesh001_Material003_0.geometry}
+              material={materials["Material.003"]}
+            />
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Pochita_Remesh001_Material_0.geometry}
+              material={materials["Material.001"]}
+            />
+          </group>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube016_Material001_0.geometry}
+            material={materials["Material.002"]}
+            position={[32.891, 262.855, -23.26]}
+            rotation={[-2.094, 0, 0]}
+            scale={71.985}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube017_Material001_0.geometry}
+            material={materials["Material.002"]}
+            position={[31.884, 100.141, -118.636]}
+            rotation={[-Math.PI / 4, 0, 0]}
+            scale={7.774}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube018_Material002_0.geometry}
+            material={materials["Material.004"]}
+            position={[31.884, 207.194, 55.27]}
+            rotation={[-2.094, 0, 0]}
+            scale={[42.09, 100, 100]}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.NurbsPath004_Material001_0.geometry}
+            material={materials["Material.002"]}
+            position={[31.884, 77.157, -127.576]}
+            rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+            scale={[23.64, 100, 100]}
+          />
+        </group>
       </group>
     </a.group>
   );
