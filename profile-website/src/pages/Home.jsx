@@ -74,7 +74,6 @@ const Home = () => {
   }
 
   const [pochitaScene, pochitaPosition, pochitaRotation] = adjustPochitaForScreenSize();
-  // const [dogScale, dogPosition, dogRotation] = adjustDogForScreenSize();
   const [computerScale, computerPosition, computerRotation] = adjustComputerForScreenSize();
   const [skiScale, skiPosition, skiRotation] = adjustSkiForScreenSize();
   const [basketballScale, basketballPosition, basketballRotation] = adjustBasketballForScreenSize();
