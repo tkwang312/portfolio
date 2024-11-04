@@ -23,6 +23,14 @@ import merci from "../assets/icons/merci.svg"
 import robotics from "../assets/icons/robotics.svg"
 import ski from "../assets/icons/ski.svg"
 import freegeek from "../assets/icons/freegeek.svg"
+import typescript from "../assets/icons/typescript.svg"
+import pytorch from '../assets/icons/pytorch.svg'
+import firebase from '../assets/icons/firebase.svg'
+import aws from '../assets/icons/aws.svg'
+import swift from '../assets/icons/swift.svg'
+import huggingface from '../assets/icons/huggingface.svg'
+import postgresql from '../assets/icons/postgresql.svg'
+import fastapi from '../assets/icons/fastapi.svg'
 
 
 export const languages = [
@@ -42,6 +50,11 @@ export const languages = [
         type: "frontend"
     }, 
     {
+        imageUrl: typescript,
+        name: "TypeScript",
+        type: "frontend"
+    },
+    {
         imageUrl: R,
         name: "R",
         type: "data",
@@ -51,6 +64,11 @@ export const languages = [
         name: "C",
         type: "ServerSide"
     },
+    {
+        imageUrl: swift,
+        name: "Swift",
+        type: "frontend"
+    }
 ]
 
 
@@ -107,6 +125,36 @@ export const skills = [
     },
     {
         imageUrl: threejs,
+        name: "Threejs",
+        type: "JavaScript",
+    },
+    {
+        imageUrl: postgresql,
+        name: "PostgreSQL",
+        type: "Database",
+    },
+    {
+        imageUrl: pytorch,
+        name: "PyTorch",
+        type: "Python",
+    },
+    {
+        imageUrl: firebase,
+        name: "Threejs",
+        type: "JavaScript",
+    },
+    {
+        imageUrl: fastapi,
+        name: "Threejs",
+        type: "JavaScript",
+    },
+    {
+        imageUrl: aws,
+        name: "Threejs",
+        type: "JavaScript",
+    },
+    {
+        imageUrl: huggingface,
         name: "Threejs",
         type: "JavaScript",
     },
